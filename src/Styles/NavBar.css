@@ -1,29 +1,30 @@
-.nav-bar{
-    background-color: #202020;
-    display: flex;
-    height: 7.5vh;
-    flex-direction: row;
-    padding: 0px;
-    margin: 0px;
-    align-items: center;
+.nav-bar {
+  background-color: #202020;
+  display: flex;
+  height: 7.5vh;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+  align-items: center;
 }
 
-a{
-    text-decoration: none;
-    color: #F0FFFF;
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 20px;
+a {
+  text-decoration: none;
+  color: #f0ffff;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.logo{
-    margin-left: 0.5vw;
+.logo {
+  margin-left: 0.5vw;
 }
 
-.nav-items{
-    margin-left: auto;
+.nav-items {
+  margin-left: auto;
 }
 
-.nav-item{
-    margin-right: 2vw;
+.nav-item {
+  margin-right: 2vw;
 }

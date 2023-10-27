@@ -6,6 +6,7 @@ import { ReactComponent as Game } from "../Assets/game.svg";
 import { ReactComponent as Stats } from "../Assets/stats.svg";
 import { ReactComponent as Globe } from "../Assets/globe.svg";
 import { ReactComponent as Free } from "../Assets/free.svg";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,9 +18,11 @@ function Home() {
         <div className="cta-content">
           The achievement tracker for all your steam achievement needs: Based on{" "}
           <span className="styled-words">YOUR</span> content and tailored for{" "}
-          <span className="styled-words">YOUR</span> needs
+          <span className="styled-words">YOUR</span> next hunt
         </div>
-        <button className="get-started">Get Started</button>
+        <Link to="/Profile">
+          <button className="get-started">Get Started</button>
+        </Link>
       </div>
       <div className="widgets">
         <div className="widget">
