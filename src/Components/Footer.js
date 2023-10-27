@@ -4,7 +4,7 @@ import '../Styles/Footer.css'
 function Footer() {
   return (
     <div className='page-footer'>
-        <p>Powered by Ethan Macleod</p>
+        <p>Powered by Ethan MacLeod</p>
     </div>
   )
 }
