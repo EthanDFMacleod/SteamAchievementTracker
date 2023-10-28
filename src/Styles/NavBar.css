@@ -1,3 +1,4 @@
+/* Main page / div */
 .nav-bar {
   background-color: #202020;
   display: flex;
@@ -8,6 +9,7 @@
   align-items: center;
 }
 
+/* Links */
 a {
   text-decoration: none;
   color: #f0ffff;
@@ -17,14 +19,17 @@ a {
   border-radius: 10px;
 }
 
+/* SAT logo */
 .logo {
   margin-left: 0.5vw;
 }
 
+/* Nav bar items group */
 .nav-items {
   margin-left: auto;
 }
 
+/* Individual nav bar items */
 .nav-item {
   margin-right: 2vw;
 }

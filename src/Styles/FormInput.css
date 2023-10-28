@@ -1,0 +1,13 @@
+/* Input box css*/
+input {
+  padding: 1vh 25vw 1vh 2vw;
+  border-radius: 10px;
+  border: none;
+  text-align: left;
+}
+
+/* CSS for the input box when selected */
+input:focus {
+  border-color: #ff7f50;
+  border-width: 2px;
+}
