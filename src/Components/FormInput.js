@@ -5,7 +5,7 @@ function FormInput(props) {
   return (
     <div className="app">
       <form>
-        <input placeholder={props.placeholder} />
+        <input ref={props.refer} placeholder={props.placeholder} />
       </form>
     </div>
   );
