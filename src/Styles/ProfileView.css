@@ -1,0 +1,42 @@
+.main {
+  background-color: #202020;
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  margin: 1vh 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture {
+  width: auto;
+  height: 5vh;
+}
+
+.info {
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+h3 {
+  color: #ed774c;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+  color: #f0ffff;
+  font-weight: bold;
+  font-size: 1em;
+}

@@ -5,9 +5,9 @@
   margin: 0px;
   padding: 0px;
   display: flex;
-  flex-direction: column;
-  justify-content: middle;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 

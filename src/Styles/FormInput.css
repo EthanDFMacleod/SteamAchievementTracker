@@ -1,6 +1,9 @@
 /* Input box css*/
 input {
-  padding: 1vh 25vw 1vh 2vw;
+  /*padding: 1vh 25vw 1vh 2vw;*/
+  padding-left: 1vw;
+  width: 30vw;
+  height: 3vh;
   border-radius: 10px;
   border: none;
   text-align: left;

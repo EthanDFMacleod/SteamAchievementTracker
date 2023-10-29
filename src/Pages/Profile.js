@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../Styles/Profile.css";
 import FormInput from "../Components/FormInput";
+import ProfileView from "../Components/ProfileView";
 import config from "../config.js";
 
 function Profile() {
@@ -40,10 +41,12 @@ function Profile() {
         {profile &&
           profile.map((player) => {
             return (
-              <div className="profile-picture" key={player.steamid}>
-                <h2 className="profile-name">{player.personaname}</h2>
-                <img src={player.avatar} alt={player.personaname} />
-              </div>
+              <ProfileView
+                profilePicture={player.avatar}
+                personaName={player.personaname}
+                countryCode={player.loccountrycode}
+                userID={player.steamid}
+              />
             );
           })}
       </div>
