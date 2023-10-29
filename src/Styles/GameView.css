@@ -1,0 +1,54 @@
+/* Define the width of each game item */
+.main-game {
+  background-color: #202020;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-right: 5vw;
+  margin-bottom: 3vh;
+  padding: 1vh 1vw;
+  width: calc(33.33% - 20px); /* Adjust percentage and margin as needed */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Add a margin to create spacing between items */
+.main-game:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* Adjust the content width and spacing within each game item as needed */
+.content-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-picture {
+  width: auto;
+  height: 7vh;
+  max-width: 100%;
+}
+
+.info-game {
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.game-title {
+  color: #ed774c;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 0;
+}
+
+.game-info {
+  margin: 0;
+  color: #f0ffff;
+  font-weight: bold;
+  font-size: 1.3em;
+}

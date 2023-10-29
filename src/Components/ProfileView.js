@@ -3,18 +3,18 @@ import "../Styles/ProfileView.css";
 
 function ProfileView(props) {
   return (
-    <div className="main">
-      <div className="content">
+    <div className="main-profile">
+      <div className="content-profile">
         <img
           src={props.profilePicture}
           alt="Steam profile"
           className="profile-picture"
         />
-        <div className="info">
-          <h3>{props.personaName}</h3>
-          <p>
+        <div className="info-profile">
+          <div className="profile-title">{props.personaName}</div>
+          <div className="profile-info">
             {props.countryCode} | {props.userID}
-          </p>
+          </div>
         </div>
       </div>
     </div>

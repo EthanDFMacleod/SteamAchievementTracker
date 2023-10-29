@@ -66,7 +66,7 @@ form {
   border: none;
   margin-left: 2vw;
   display: inline-flex;
-  padding: 1vh 1vw;
+  padding: 0.9vh 1vw;
   justify-content: center;
   align-items: center;
 }
@@ -78,15 +78,24 @@ form {
 }
 
 .profiles-group {
-  background-color: #2c2c2c;
-  margin: 5vh 5vw;
+  background-color: #202020;
+
+  margin: 0vh 5vw;
   padding: 0px;
 }
 
-.profile-grid {
-  margin: 5vh 10vw;
-  display: grid;
-  column-gap: 3vw;
-  row-gap: 3vh;
-  grid-template-columns: 15vw 15vw 15vw;
+.games {
+  margin: 5vh 5vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+}
+
+.games-grid {
+  width: 100%; /* Set the games-grid to fill the entire games container */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly across the container */
 }

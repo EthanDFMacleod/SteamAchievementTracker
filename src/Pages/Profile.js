@@ -1,22 +1,47 @@
 import React, { useRef, useState } from "react";
 import "../Styles/Profile.css";
+import config from "../config.js";
 import FormInput from "../Components/FormInput";
 import ProfileView from "../Components/ProfileView";
-import config from "../config.js";
+import GameView from "../Components/GameView";
 
 function Profile() {
   const [profile, setProfile] = useState(null);
+  const [game, setGames] = useState(null);
   const inputRef = useRef(null);
 
   const getProfile = () => {
-    const steamID = inputRef.current.value;
+    const input = inputRef.current.value.trim();
+    var query = "";
+    const steamIDPattern = /^[0-9/]+$/;
 
-    fetch(
-      `ISteamUser/GetPlayerSummaries/v0002/?key=${config.STEAM_API_KEY}&steamids=${steamID}`
-    )
+    if (input.includes("https://")) {
+      input.replace("https://steamcommunity.com/profiles/");
+      query = `ISteamUser/GetPlayerSummaries/v0002/?key=${config.STEAM_API_KEY}&steamids=${input}`;
+    } else if (steamIDPattern.test(input)) {
+      query = `ISteamUser/GetPlayerSummaries/v0002/?key=${config.STEAM_API_KEY}&steamids=${input}`;
+    } else {
+      query = `ISteamUser/ResolveVanityURL/v0001/?key=${config.STEAM_API_KEY}&vanityurl=${input}`;
+    }
+
+    fetch(query)
       .then((response) => response.json())
       .then((data) => {
         setProfile(data.response.players);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
+    fetch(
+      `IPlayerService/GetOwnedGames/v0001/?key=${config.STEAM_API_KEY}&steamid=${input}&format=json&include_appinfo=true`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        data.response.games.sort(
+          (a, b) => b.playtime_forever - a.playtime_forever
+        );
+        setGames(data.response.games);
       })
       .catch((err) => {
         console.log(err.message);
@@ -35,20 +60,36 @@ function Profile() {
           <button className="submit-profile" onClick={getProfile}>
             Search
           </button>
+          <div className="profiles-group">
+            {profile &&
+              profile.map((player) => {
+                return (
+                  <ProfileView
+                    profilePicture={player.avatar}
+                    personaName={player.personaname}
+                    countryCode={player.loccountrycode}
+                    userID={player.steamid}
+                    key={player.userID}
+                  />
+                );
+              })}
+          </div>
         </div>
       </div>
-      <div className="profiles-group">
-        {profile &&
-          profile.map((player) => {
-            return (
-              <ProfileView
-                profilePicture={player.avatar}
-                personaName={player.personaname}
-                countryCode={player.loccountrycode}
-                userID={player.steamid}
+      <div className="games">
+        {game && (
+          <div className="games-grid">
+            {game.map((games) => (
+              <GameView
+                gameName={games.name}
+                gamePicture={games.img_icon_url}
+                timePlayed={(games.playtime_forever / 60).toFixed(1)}
+                appID={games.appid}
+                key={games.appID}
               />
-            );
-          })}
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
