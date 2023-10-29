@@ -41,6 +41,7 @@ function Profile() {
         data.response.games.sort(
           (a, b) => b.playtime_forever - a.playtime_forever
         );
+
         setGames(data.response.games);
       })
       .catch((err) => {

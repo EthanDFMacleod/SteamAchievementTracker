@@ -48,14 +48,6 @@ span {
   margin-right: 2vw;
 }
 
-/* Search bar and submit button group */
-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Search button */
 .submit-profile {
   background-color: #ff7f50;
@@ -79,7 +71,6 @@ form {
 
 .profiles-group {
   background-color: #202020;
-
   margin: 0vh 5vw;
   padding: 0px;
 }
@@ -98,4 +89,27 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Distribute items evenly across the container */
+}
+
+/* Medium sized screen */
+@media only screen and (max-width: 1500px) {
+  .main-game {
+    width: calc(50% - 20px); /* Two columns for medium screens */
+  }
+}
+
+/* Small screen */
+@media only screen and (max-width: 600px) {
+  .search {
+    flex-direction: column;
+  }
+
+  .submit-profile {
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  .search-text {
+    margin-bottom: 1vh;
+  }
 }
