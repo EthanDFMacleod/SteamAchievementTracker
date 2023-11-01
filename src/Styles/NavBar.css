@@ -10,7 +10,7 @@
 }
 
 /* Links */
-a {
+.nav-bar a {
   text-decoration: none;
   color: #f0ffff;
   font-size: 1.5em;

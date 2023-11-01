@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import "../Styles/GameView.css";
 
 function GameView(props) {
   return (
-    <div className="main-game">
+    <Link
+      className="main-game"
+      to={`/Game?gameid=${props.appID}&user=${props.user}`}
+    >
       <div className="content-game">
         <img
           src={`http://media.steampowered.com/steamcommunity/public/images/apps/${props.appID}/${props.gamePicture}.jpg`}
@@ -17,7 +21,7 @@ function GameView(props) {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

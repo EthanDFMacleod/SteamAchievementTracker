@@ -8,6 +8,7 @@ import GameView from "../Components/GameView";
 function Profile() {
   const [profile, setProfile] = useState(null);
   const [game, setGames] = useState(null);
+  const [userID, setUserID] = useState(null);
   const inputRef = useRef(null);
 
   const getProfile = () => {
@@ -23,6 +24,8 @@ function Profile() {
     } else {
       query = `ISteamUser/ResolveVanityURL/v0001/?key=${config.STEAM_API_KEY}&vanityurl=${input}`;
     }
+
+    setUserID(input);
 
     fetch(query)
       .then((response) => response.json())
@@ -86,7 +89,8 @@ function Profile() {
                 gamePicture={games.img_icon_url}
                 timePlayed={(games.playtime_forever / 60).toFixed(1)}
                 appID={games.appid}
-                key={games.appID}
+                user={userID}
+                key={games.appid}
               />
             ))}
           </div>
